@@ -1,8 +1,9 @@
+import React from 'react';
 import './App.css';
 import backgroundImage from './images/background.jpg';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Kjoreplan from './components/Kjoreplan';
-import Navigation from './components/Navigation';
+import { Navigation } from './components/Navigation.tsx';
+import { Kjoreplan } from './components/Kjoreplan.tsx';
 
 function App() {
   const heroStyle = {

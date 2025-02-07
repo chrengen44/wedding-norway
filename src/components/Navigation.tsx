@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 
-function Navigation() {
+export function Navigation() {
   return (
     <nav className="navigation">
       <ul>
@@ -14,6 +14,4 @@ function Navigation() {
       </ul>
     </nav>
   );
-}
-
-export default Navigation; 
+} 
