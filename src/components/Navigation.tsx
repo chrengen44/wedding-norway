@@ -8,9 +8,7 @@ export function Navigation() {
       <ul>
         <li><Link to="/">Hjem</Link></li>
         <li><Link to="/kjoreplan">Kjøreplan</Link></li>
-        <li>Detaljer</li>
-        <li>Reise</li>
-        <li>RSVP</li>
+        <li><Link to="/onskeliste">Ønskeliste</Link></li>
       </ul>
     </nav>
   );
