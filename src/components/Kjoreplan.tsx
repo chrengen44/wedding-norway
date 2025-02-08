@@ -3,30 +3,36 @@ import './Kjoreplan.css';
 import { Navigation } from './Navigation.tsx';
 import { Timeline } from './Timeline.tsx';
 
+// Import your images
+import kirke from '../images/Ulleren Kirke.jpg';
+import buss from '../images/buss.svg';
+import nyGifte from '../images/Nygifte.svg';
+import dinner from '../images/dinner.svg';
+
 const timelineEvents = [
   {
-    date: 'Oktober 2021',
-    title: 'Første Møte',
-    description: 'Vi møttes for første gang i Oslo. Det var morsomt å se hverandre igjen. Vi hadde gode samtaler og vi tok en tur i parken. og tjo og hei.',
-    image: 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=800'
+    date: 'Kl.13:00',
+    title: 'Vielse Ulleren Kirke',
+    description: 'Vi møtes i ærverdige Ulleren Kirke for vielse. Adresse: Holgerslystveien 0280 Oslo',
+    image: kirke
   },
   {
-    date: 'Desember 2021',
-    title: 'Første Date',
+    date: 'Etter vielsen',
+    title: 'Alle blir busset til Tårnet Kulturarena',
     description: 'Middag på restaurant og lang kveld med gode samtaler',
-    image: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800'
+    image: buss
   },
   {
-    date: 'Juni 2022',
-    title: 'Flyttet Sammen',
-    description: 'Vi tok det store steget og flyttet sammen',
-    image: 'https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=800'
+    date: 'Etter vielsen',
+    title: 'Fotografering av brudeparet',
+    description: 'Brudeparet blir fotografert og vil ankomme Tårnet Kulturarena senere.',
+    image: nyGifte
   },
   {
-    date: 'August 2023',
-    title: 'Forlovelsen',
-    description: 'En perfekt sommerkveld med et overraskende spørsmål',
-    image: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800'
+    date: 'Kl.18:00',
+    title: 'Middag',
+    description: 'Jævlig god mat serveres med kun Malibu & Cola til drikke',
+    image: dinner
   }
 ];
 
