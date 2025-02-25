@@ -1,177 +1,438 @@
 .App {
   text-align: center;
-  height: 100vh;
-  color: #2a2a2a;
+  min-height: 100vh;
+  background-color: #ffffff;
 }
 
-.hero-section {
-  height: 100vh;
-  min-height: 800px;  /* Ensures minimum height on all screens */
-  padding-top: 60px;
+.page-container {
+  min-height: calc(100vh - 55px);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;  /* Prevents any potential overflow */
+  flex-direction: column;
+  padding-top: 55px; /* Navigation height */
 }
 
-.overlay {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 5rem 7rem;
-  border-radius: 3px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
-  position: relative;
-  border: 1px solid rgba(156, 128, 163, 0.2);  /* Softer purple border */
-}
-
-.content-wrapper {
-  position: relative;
-  padding: 2rem;
-  border: none
-}
-
-.content-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 1px solid rgba(156, 128, 163, 0.2);
-  z-index: -1;
-}
-
-.welcome-text {
-  font-family: 'Cormorant Garamond', serif;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  font-size: 1rem;
-  color: #9c80a3;  /* Soft purple */
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.names-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5rem 0;
-}
-
-.names {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.8rem;
-  font-weight: 400;
-  color: #2a2a2a;
-  margin: 0 1rem;
-}
-
-.ampersand {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  color: #9c80a3;
-  font-style: italic;
-  margin: 0 1.5rem;
-}
-
-.invitation-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
-  color: #666;
-  font-style: italic;
-  margin: 2rem 0;
-}
-
-.date-venue {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Montserrat', sans-serif;
-  color: #666;
-  margin-top: 2rem;
-}
-
-.date-venue p {
-  margin: 0 1.5rem;
-  font-size: 1rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.divider {
-  color: #9c80a3;
-  font-size: 0.8rem;
-}
-
-.navigation {
+/* Add styles for navigation wrapper */
+.navigation-wrapper {
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 1.2rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(156, 128, 163, 0.2);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Add a subtle shadow to separate it from the image */
+  box-shadow: 0 2px 4px white(0, 0, 0, 0.1);
 }
 
-.navigation ul {
-  list-style: none;
+.split-layout {
   display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;  /* Reset margin */
+  flex: 1;
+  height: calc(100vh - 55px); /* Only subtract navigation height */
 }
 
-.navigation li {
-  margin: 0 2.5rem;
+.image-section {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 55px); /* Match split-layout */
+}
+
+.carousel-slide {
+  position: relative;
+  height: calc(100vh - 55px);
+  width: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* Center the image */
+}
+
+/* Customize carousel dots */
+.slick-dots {
+  top: calc(100% - 50px);
+  bottom: auto; /* Remove top positioning */
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+}
+
+.slick-dots li {
+  margin: 0 8px;
+  position: relative;
+}
+
+.slick-dots li button:before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  position: relative;
+  z-index: 101;
+}
+
+.slick-dots li.slick-active button:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: orange;
+  border-radius: 50%;
+}
+
+/* Remove the button background */
+.slick-dots li button {
+  background: transparent;
+}
+
+/* Remove text shadow since we're using filled dots now */
+.slick-dots li button:before {
+  text-shadow: none;
+}
+
+/* Ensure all slider elements match height */
+.image-section .slick-slider,
+.image-section .slick-list,
+.image-section .slick-track,
+.image-section .slick-slide,
+.image-section .slick-slide > div {
+  height: 100%;
+}
+
+/* Remove the top gradient since dots are at bottom */
+.carousel-slide::before {
+  display: none;
+}
+
+/* Keep the bottom gradient for dot visibility */
+.carousel-slide::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  z-index: 99;
+}
+
+/* Fade animation styles */
+.slick-fade .slick-slide {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slick-fade .slick-slide.slick-active {
+  opacity: 1;
+}
+
+/* Remove any previous background-image styles */
+.image-section {
+  background-image: none;
+}
+
+.info-section {
+  flex: 1;
+  padding: 1.7rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: #fff;
+  overflow: visible;
+  height: calc(100vh - 110px); /* Match the image section height */
+}
+
+.eucalyptus-top {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: 200px; /* Slightly smaller */
+  height: 150px;
+  background-image: url('./images/frontpage/eucalyptus.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.eucalyptus-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  width: 200px; /* Slightly smaller */
+  height: 150px;
+  background-image: url('./images/frontpage/eucalyptus.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  transform: rotate(180deg);
+}
+
+.wedding-info {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-height: calc(100vh - 150px); /* Adjusted to match new container height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wedding-info h1 {
+  font-size: 3rem; /* Slightly smaller */
+  margin-bottom: 1rem; /* Reduced margin */
   font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: #2c3e50;
+}
+
+.location, .date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 0.9rem;
-  color: #2a2a2a;  /* Changed from white to dark grey */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  position: relative;  /* For hover effect */
+  color: #666;
+  margin: 0.5rem 0;
 }
 
-.navigation li a {
-  text-decoration: none;  /* Removes underline */
-  color: inherit;  /* Inherits the color from parent */
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: stretch;
+  width: 100%;
+  padding: 0 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Update the hover effect to work with the Link */
-.navigation li:hover a {
+.info-box, 
+.info-box-link {
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #2a2a2a;
+  margin-bottom: 1rem;
+}
+
+.info-box h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #2a2a2a;
+}
+
+/* Optional: Add hover effect to match navigation */
+.info-box:hover .info-icon,
+.info-box:hover h3 {
   color: #9c80a3;
+  transition: all 0.3s ease;
 }
 
-/* Remove the previous underline effect */
-.navigation li::after {
-  display: none;
+.info-box p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.25rem 0;
 }
 
-@media (max-width: 768px) {
-  .overlay {
-    padding: 2rem;
-    margin: 1rem;
+.info-box-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  height: 100%;
+}
+
+/* Container for the linked info boxes */
+.info-box-link .info-box {
+  width: 100%;
+}
+
+/* Update the hover effect to work with links */
+.info-box-link:hover .info-box {
+  transform: translateY(-5px);
+}
+
+.info-box-link:hover .info-icon,
+.info-box-link:hover h3 {
+  color: #9c80a3;
+  transition: all 0.3s ease;
+}
+
+/* Update mobile styles */
+@media (max-width: 1024px) {
+  .split-layout,
+  .image-section,
+  .carousel-slide,
+  .info-section {
+    height: auto;
   }
-  
-  .names {
+
+  .image-section,
+  .carousel-slide {
+    height: 50vh;
+  }
+
+  .info-section {
+    height: auto;
+    padding: 2rem;
+  }
+
+  .wedding-info h1 {
     font-size: 2.5rem;
   }
-  
-  .navigation li {
-    margin: 0 1rem;
-    font-size: 0.7rem;
+
+  .eucalyptus-top, .eucalyptus-bottom {
+    width: 200px;
+    height: 150px;
+  }
+
+  .info-boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .info-box,
+  .info-box-link {
+    width: 80%;
+    max-width: 300px;
+    flex: none;
   }
 }
 
-/* Remove unused classes */
-.App-logo, .App-header, .App-link, .wedding-header, .date-location, .wedding-date, .wedding-location {
+/* Navigation styles remain the same */
+
+.hearts-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99;
+}
+
+.heart {
+  position: absolute;
+  font-size: 20px;
+  color: rgba(255, 0, 0, 0.3);
+  animation: floatingHeart linear infinite;
+}
+
+/* Remove the old heart shape CSS */
+.heart::before,
+.heart::after {
   display: none;
 }
 
-/* Remove unused animation */
-@keyframes App-logo-spin {
+@keyframes floatingHeart {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* Optional: Add hover effect to hearts */
+.heart:hover {
+  animation-play-state: paused;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: 400px;
+  text-align: center;
+  z-index: 2;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.85) 30%,
+    rgba(255, 255, 255, 0.6) 60%,
+    rgba(255, 255, 255, 0.2) 90%,
+    transparent 100%
+  );
+  padding: 20px 40px;
+  animation: cloudFloat 8s ease-in-out infinite;
+}
+
+.story-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: #2a2a2a; /* Changed to dark text for better visibility on white cloud */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 10px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+/* Remove the heart decorations */
+.story-text::before,
+.story-text::after {
   display: none;
+}
+
+/* The text will fade out with the slide */
+.slick-slide:not(.slick-active) .story-text {
+  opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-overlay {
+    min-width: 300px;
+    bottom: 80px;
+  }
+  
+  .story-text {
+    font-size: 2rem;
+  }
+}
+
+@keyframes cloudFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
