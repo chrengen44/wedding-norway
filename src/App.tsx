@@ -82,16 +82,16 @@ function App() {
                 <div className="info-boxes">
                   <div className="info-box">
                     <FaUserTie className="info-icon" />
-                    <h3>Toastmaster</h3>
-                    <p>Trond da man</p>
-                    <p>Tlf: 123 45 678</p>
+                    <h3>Kveldens Sjef</h3>
+                    <p>Trond "The Boss" Løschbrandt</p>
+                    <p>Ring hvis du tør: 123 45 678</p>
                   </div>
                   
                   <Link to="/onskeliste" className="info-box-link">
                     <div className="info-box">
                       <FaGift className="info-icon" />
                       <h3>Ønskeliste</h3>
-                      <p>Kommer snart</p>
+                      <p>PS: Vi har egentlig 0 peiling på hva vi ønsker.</p>
                     </div>
                   </Link>
                   
@@ -99,7 +99,7 @@ function App() {
                     <div className="info-box">
                       <FaCalendarAlt className="info-icon" />
                       <h3>Kjøreplan</h3>
-                      <p>Se program for dagen</p>
+                      <p>Klikk her for å se hva som skjer (og når du må være edru).</p>
                     </div>
                   </Link>
                 </div>

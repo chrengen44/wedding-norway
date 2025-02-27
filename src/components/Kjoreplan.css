@@ -1,15 +1,14 @@
 .kjoreplan {
-  padding-top: 100px;  /* Increased padding to account for fixed navigation */
+  padding-top: 60px;
   background: #fff;
   min-height: 100vh;
 }
 
 .kjoreplan-title {
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  margin: 2rem 0;
+  font-family: 'Cormorant Garamond', serif;
   color: #2a2a2a;
-  margin-bottom: 60px;
-  font-size: 2.5rem;
 }
 
 .timeline {
@@ -230,5 +229,45 @@
     width: 100%;
     max-width: 300px;  /* Reverted back to original max-width */
     margin-bottom: 20px;
+  }
+}
+
+.bar-menu-section {
+  margin: 4rem auto;
+  padding: 0 20px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.bar-menu-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #2a2a2a;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bar-menu-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bar-menu-section {
+    margin: 2rem auto;
+  }
+  
+  .menu-container {
+    padding: 10px;
   }
 } 
