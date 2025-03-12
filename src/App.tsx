@@ -4,6 +4,7 @@ import backgroundImage from './images/background.jpg';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Navigation } from './components/Navigation.tsx';
 import { Kjoreplan } from './components/Kjoreplan.tsx';
+import { Wishlist } from './pages/Wishlist.tsx';
 
 function App() {
   const heroStyle = {
@@ -43,6 +44,10 @@ function App() {
     {
       path: "/kjoreplan",
       element: <Kjoreplan />,
+    },
+    {
+      path: "/onskeliste",
+      element: <Wishlist />,
     },
   ]);
 
