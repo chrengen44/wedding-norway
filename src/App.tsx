@@ -3,7 +3,7 @@ import './App.css';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Navigation } from './components/Navigation.tsx';
 import { Kjoreplan } from './components/Kjoreplan.tsx';
 import { Wishlist } from './pages/Wishlist.tsx';
@@ -30,10 +30,9 @@ function App() {
     arrows: false,
   };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
+  return (
+    <div className="App">
+      <Router>
         <div className="page-container">
           <div className="navigation-wrapper">
             <Navigation />
@@ -108,21 +107,7 @@ function App() {
             </div>
           </div>
         </div>
-      ),
-    },
-    {
-      path: "/kjoreplan",
-      element: <Kjoreplan />,
-    },
-    {
-      path: "/onskeliste",
-      element: <Wishlist />,
-    },
-  ]);
-
-  return (
-    <div className="App">
-      <RouterProvider router={router} />
+      </Router>
     </div>
   );
 }
