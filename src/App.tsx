@@ -33,80 +33,86 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="page-container">
-          <div className="navigation-wrapper">
-            <Navigation />
-          </div>
-          <div className="hearts-container">
-            {[...Array(15)].map((_, i) => (
-              <div key={i} className="heart" style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${15 + Math.random() * 10}s`
-              }}>
-                <FaHeart />
+        <Routes>
+          <Route path="/" element={
+            <div className="page-container">
+              <div className="navigation-wrapper">
+                <Navigation />
               </div>
-            ))}
-          </div>
-          <div className="split-layout">
-            <div className="image-section">
-              <Slider {...carouselSettings}>
-                <div className="carousel-slide">
-                  <img src={forside1} alt="Wedding" />
-                  <div className="image-overlay">
-                    <p className="story-text">So it begins...</p>
+              <div className="hearts-container">
+                {[...Array(15)].map((_, i) => (
+                  <div key={i} className="heart" style={{
+                    left: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 5}s`,
+                    animationDuration: `${15 + Math.random() * 10}s`
+                  }}>
+                    <FaHeart />
                   </div>
+                ))}
+              </div>
+              <div className="split-layout">
+                <div className="image-section">
+                  <Slider {...carouselSettings}>
+                    <div className="carousel-slide">
+                      <img src={forside1} alt="Wedding" />
+                      <div className="image-overlay">
+                        <p className="story-text">So it begins...</p>
+                      </div>
+                    </div>
+                    <div className="carousel-slide">
+                      <img src={forside2} alt="Wedding" />
+                    </div>
+                    <div className="carousel-slide">
+                      <img src={forside3} alt="Wedding" />
+                    </div>
+                    <div className="carousel-slide">
+                      <img src={forside4} alt="Wedding" />
+                    </div>
+                    <div className="carousel-slide">
+                      <img src={forside5} alt="Wedding" />
+                    </div>
+                  </Slider>
                 </div>
-                <div className="carousel-slide">
-                  <img src={forside2} alt="Wedding" />
-                </div>
-                <div className="carousel-slide">
-                  <img src={forside3} alt="Wedding" />
-                </div>
-                <div className="carousel-slide">
-                  <img src={forside4} alt="Wedding" />
-                </div>
-                <div className="carousel-slide">
-                  <img src={forside5} alt="Wedding" />
-                </div>
-              </Slider>
-            </div>
-            <div className="info-section">
-              <div className="eucalyptus-top"></div>
-              <div className="wedding-info">
-                <h1>Anndrea & Christian</h1>
-                <p className="location">Ullern Kirke / Tårnet Kulturarena</p>
-                <p className="date">28.Juni 2025 kl.13:00</p>
-                
-                <div className="info-boxes">
-                  <div className="info-box">
-                    <FaUserTie className="info-icon" />
-                    <h3>Kveldens Sjef</h3>
-                    <p>Trond "The Boss" Løschbrandt</p>
-                    <p>Ring hvis du tør: 123 45 678</p>
+                <div className="info-section">
+                  <div className="eucalyptus-top"></div>
+                  <div className="wedding-info">
+                    <h1>Anndrea & Christian</h1>
+                    <p className="location">Ullern Kirke / Tårnet Kulturarena</p>
+                    <p className="date">28.Juni 2025 kl.13:00</p>
+                    
+                    <div className="info-boxes">
+                      <div className="info-box">
+                        <FaUserTie className="info-icon" />
+                        <h3>Kveldens Sjef</h3>
+                        <p>Trond "The Boss" Løschbrandt</p>
+                        <p>Ring hvis du tør: 123 45 678</p>
+                      </div>
+                      
+                      <Link to="/onskeliste" className="info-box-link">
+                        <div className="info-box">
+                          <FaGift className="info-icon" />
+                          <h3>Ønskeliste</h3>
+                          <p>PS: Vi har egentlig 0 peiling på hva vi ønsker.</p>
+                        </div>
+                      </Link>
+                      
+                      <Link to="/kjoreplan" className="info-box-link">
+                        <div className="info-box">
+                          <FaCalendarAlt className="info-icon" />
+                          <h3>Kjøreplan</h3>
+                          <p>Klikk her for å se hva som skjer (og når du må være edru).</p>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
-                  
-                  <Link to="/onskeliste" className="info-box-link">
-                    <div className="info-box">
-                      <FaGift className="info-icon" />
-                      <h3>Ønskeliste</h3>
-                      <p>PS: Vi har egentlig 0 peiling på hva vi ønsker.</p>
-                    </div>
-                  </Link>
-                  
-                  <Link to="/kjoreplan" className="info-box-link">
-                    <div className="info-box">
-                      <FaCalendarAlt className="info-icon" />
-                      <h3>Kjøreplan</h3>
-                      <p>Klikk her for å se hva som skjer (og når du må være edru).</p>
-                    </div>
-                  </Link>
+                  <div className="eucalyptus-bottom"></div>
                 </div>
               </div>
-              <div className="eucalyptus-bottom"></div>
             </div>
-          </div>
-        </div>
+          } />
+          <Route path="/kjoreplan" element={<Kjoreplan />} />
+          <Route path="/onskeliste" element={<Wishlist />} />
+        </Routes>
       </Router>
     </div>
   );
