@@ -2,7 +2,6 @@ import React from 'react';
 import './Kjoreplan.css';
 import { Navigation } from './Navigation.tsx';
 import { Timeline } from './Timeline.tsx';
-import barMenu from '../images/bar-menu.png';
 
 // Import your images
 import kirke from '../images/Ulleren Kirke.jpg';
@@ -43,16 +42,6 @@ export function Kjoreplan() {
       <Navigation />
       <h1 className="kjoreplan-title">Kjøreplan</h1>
       <Timeline events={timelineEvents} />
-      <div className="bar-menu-section">
-        <h2>Bar Menu</h2>
-        <div className="menu-container">
-          <img 
-            src={barMenu} 
-            alt="Bar Menu" 
-            className="bar-menu-image"
-          />
-        </div>
-      </div>
     </div>
   );
 } 
