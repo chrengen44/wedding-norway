@@ -7,7 +7,7 @@ import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Navigation } from "./components/Navigation.tsx";
 import { Kjoreplan } from "./components/Kjoreplan.tsx";
 import { Wishlist } from "./pages/Wishlist.tsx";
-import { FaUserTie, FaGift, FaCalendarAlt, FaHeart } from "react-icons/fa";
+import { FaUserTie, FaInfoCircle, FaHeart } from "react-icons/fa";
 
 // Import all images
 import forside1 from "./images/frontpage/forside1.jpeg";
@@ -87,35 +87,26 @@ function App() {
                         Ullern Kirke / Tårnet Kulturarena
                       </p>
                       <p className='date'>28.Juni 2025 kl.13:00</p>
+                      <div className='contact-info'>
+                        <p><FaHeart className="contact-icon" /> Anndrea: 94881641</p>
+                        <p><FaHeart className="contact-icon" /> Christian: 92428133</p>
+                      </div>
 
                       <div className='info-boxes'>
                         <div className='info-box'>
                           <FaUserTie className='info-icon' />
                           <h3>Kveldens Sjef</h3>
                           <p>Trond "The Boss" Løschbrandt</p>
-                          <p>Tlf: 93460480</p>
+                          <p>Ring hvis du tør: 123 45 678</p>
                         </div>
 
-                        <Link to='/onskeliste' className='info-box-link'>
-                          <div className='info-box'>
-                            <FaGift className='info-icon' />
-                            <h3>Ønskeliste</h3>
-                            <p>
-                              PS: Vi har egentlig 0 peiling på hva vi ønsker.
-                            </p>
-                          </div>
-                        </Link>
-
-                        <Link to='/kjoreplan' className='info-box-link'>
-                          <div className='info-box'>
-                            <FaCalendarAlt className='info-icon' />
-                            <h3>Kjøreplan</h3>
-                            <p>
-                              Klikk her for å se hva som skjer (og når du må
-                              være edru).
-                            </p>
-                          </div>
-                        </Link>
+                        <div className='info-box important-info'>
+                          <FaInfoCircle className='info-icon' />
+                          <h3>Viktig info</h3>
+                          <ul className='info-list'>
+                            <li>Husk å meld ifra om allergier - innen 31.mai.</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                     <div className='eucalyptus-bottom'></div>

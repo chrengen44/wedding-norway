@@ -181,8 +181,8 @@
 }
 
 .wedding-info h1 {
-  font-size: 3rem; /* Slightly smaller */
-  margin-bottom: 1rem; /* Reduced margin */
+  font-size: 3rem;
+  margin-bottom: 1rem;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   color: #2c3e50;
@@ -195,6 +195,47 @@
   letter-spacing: 3px;
   color: #666;
   margin: 0.5rem 0;
+}
+
+.contact-info {
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(156, 128, 163, 0.2);
+  border-bottom: 1px solid rgba(156, 128, 163, 0.2);
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 4px;
+}
+
+.contact-info p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #2a2a2a;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: #2a2a2a;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.contact-info p:hover .contact-icon {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* Remove the old phone emoji style */
+.contact-info p::before {
+  display: none;
 }
 
 .info-boxes {
@@ -214,7 +255,13 @@
   flex: 1;
   min-width: 200px;
   max-width: 250px;
-  width: 250px; /* Set fixed width */
+  width: 250px;
+}
+
+.info-box.important-info {
+  flex: 2;
+  max-width: 400px;
+  width: 400px;
 }
 
 .info-box {
@@ -238,12 +285,8 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(156, 128, 163, 0.1));
 }
 
-.info-box:nth-child(2) {
+.info-box.important-info {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 182, 193, 0.1));
-}
-
-.info-box:nth-child(3) {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(176, 196, 222, 0.1));
 }
 
 /* Add subtle watercolor effect */
@@ -319,6 +362,29 @@
 .info-box-link:hover h3 {
   color: #9c80a3;
   transition: all 0.3s ease;
+}
+
+.info-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  text-align: left;
+  width: 100%;
+}
+
+.info-list li {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #2a2a2a;
+  display: flex;
+  align-items: center;
+}
+
+.info-list li::before {
+  content: "•";
+  color: #ff69b4;
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 /* Update mobile styles */
@@ -524,41 +590,29 @@
     flex: none;
   }
 
-  .info-box-link {
-    display: block;
+  .info-box.important-info {
     width: 100%;
+    max-width: 100%;
   }
 
   .info-box {
-    background: rgba(255, 255, 255, 0.95);
+    padding: 1.2rem;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: auto;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .info-box:nth-child(1) {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(156, 128, 163, 0.15));
+  .info-list {
+    margin: 0.8rem 0 0 0;
   }
 
-  .info-box:nth-child(2) {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 182, 193, 0.15));
-  }
-
-  .info-box:nth-child(3) {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(176, 196, 222, 0.15));
-  }
-
-  .info-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .info-box h3 {
-    font-size: 1.1rem;
-    margin: 0.3rem 0;
-  }
-
-  .info-box p {
-    font-size: 0.9rem;
-    margin: 0.2rem 0;
-    text-align: center;
+  .info-list li {
+    font-size: 0.85rem;
   }
 
   .hearts-container {
@@ -574,6 +628,15 @@
   .story-text {
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
+  }
+
+  .contact-info {
+    margin: 1rem 0;
+    padding: 0.8rem 0;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
   }
 }
 
@@ -626,6 +689,15 @@
 
   .story-text {
     font-size: 1.2rem;
+  }
+
+  .contact-info {
+    margin: 0.8rem 0;
+    padding: 0.6rem 0;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
   }
 }
 
