@@ -8,8 +8,8 @@ export function Wishlist() {
       <Navigation />
       <div className="wishlist-container">
         <div className="wishlist-fallback">
-          <h2>Ønskelisten</h2>
-          <p>Klikk på knappen under for å se vår ønskeliste:</p>
+          <h1>Ønskelisten</h1>
+          <p>Vi kommer til å legge ut flere ønsker fremover, men for øyeblikket er dette vår ønskeliste:</p>
           <a 
             href="https://www.onskelister.no/liste?id=CacHQ4co7AXX5K9AsmXs" 
             target="_blank" 
