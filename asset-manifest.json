@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/wedding-norway/static/css/main.2e587199.css",
+    "main.js": "/wedding-norway/static/js/main.c020a668.js",
+    "static/js/488.3d1917e9.chunk.js": "/wedding-norway/static/js/488.3d1917e9.chunk.js",
+    "static/media/forside2.jpeg": "/wedding-norway/static/media/forside2.316129b11c728e8a5b56.jpeg",
+    "static/media/forside3.jpeg": "/wedding-norway/static/media/forside3.65b165f75746c53eecb4.jpeg",
+    "static/media/forside1.jpeg": "/wedding-norway/static/media/forside1.7f647589d82918726a58.jpeg",
+    "static/media/forside4.jpeg": "/wedding-norway/static/media/forside4.4c6de74cadb0209dbe11.jpeg",
+    "static/media/dinner.png": "/wedding-norway/static/media/dinner.9ba406b0ff01e2b19520.png",
+    "static/media/forside5.jpeg": "/wedding-norway/static/media/forside5.a685e8e93da03bdbdd49.jpeg",
+    "static/media/buss.jpg": "/wedding-norway/static/media/buss.7bdb9840e18e242efd36.jpg",
+    "static/media/eucalyptus.jpg": "/wedding-norway/static/media/eucalyptus.19d6ba595fa3753410e1.jpg",
+    "static/media/church.jpg": "/wedding-norway/static/media/church.8f9a5dd920b9c5be544c.jpg",
+    "static/media/food.jpg": "/wedding-norway/static/media/food.0a42f0865ffa4169d466.jpg",
+    "static/media/slick.svg": "/wedding-norway/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/wedding-norway/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/wedding-norway/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/wedding-norway/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/wedding-norway/index.html",
+    "main.2e587199.css.map": "/wedding-norway/static/css/main.2e587199.css.map",
+    "main.c020a668.js.map": "/wedding-norway/static/js/main.c020a668.js.map",
+    "488.3d1917e9.chunk.js.map": "/wedding-norway/static/js/488.3d1917e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e587199.css",
+    "static/js/main.c020a668.js"
+  ]
+}
