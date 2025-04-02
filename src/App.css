@@ -214,6 +214,7 @@
   flex: 1;
   min-width: 200px;
   max-width: 250px;
+  width: 250px; /* Set fixed width */
 }
 
 .info-box {
@@ -228,10 +229,45 @@
   align-items: center;
   margin: 0;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Add watercolor backgrounds to each box */
+.info-box:nth-child(1) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(156, 128, 163, 0.1));
+}
+
+.info-box:nth-child(2) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 182, 193, 0.1));
+}
+
+.info-box:nth-child(3) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(176, 196, 222, 0.1));
+}
+
+/* Add subtle watercolor effect */
+.info-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.info-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Update hover effect to work with new backgrounds */
 .info-box:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .info-icon {
@@ -266,6 +302,7 @@
   color: inherit;
   display: flex;
   height: 100%;
+  width: 250px; /* Match the fixed width */
 }
 
 /* Container for the linked info boxes */
@@ -418,13 +455,177 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .image-overlay {
-    min-width: 300px;
-    bottom: 80px;
+  .split-layout {
+    flex-direction: column;
+    height: auto;
   }
-  
+
+  .image-section {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .carousel-slide {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .info-section {
+    height: auto;
+    padding: 2rem 1rem;
+    min-height: 50vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wedding-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .location, .date {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+  }
+
+  .eucalyptus-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 60px;
+    opacity: 0.6;
+  }
+
+  .eucalyptus-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 60px;
+    opacity: 0.6;
+    transform: rotate(180deg);
+  }
+
+  .info-boxes {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .info-box, 
+  .info-box-link {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    flex: none;
+  }
+
+  .info-box-link {
+    display: block;
+    width: 100%;
+  }
+
+  .info-box {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .info-box:nth-child(1) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(156, 128, 163, 0.15));
+  }
+
+  .info-box:nth-child(2) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 182, 193, 0.15));
+  }
+
+  .info-box:nth-child(3) {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(176, 196, 222, 0.15));
+  }
+
+  .info-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .info-box h3 {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+  }
+
+  .info-box p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    text-align: center;
+  }
+
+  .hearts-container {
+    display: none;
+  }
+
+  .image-overlay {
+    opacity: 0.7;
+    min-width: 80%;
+    padding: 15px 25px;
+  }
+
   .story-text {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Add styles for very small screens */
+@media (max-width: 480px) {
+  .wedding-info h1 {
     font-size: 2rem;
+  }
+
+  .location, .date {
+    font-size: 0.9rem;
+  }
+
+  .info-section {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .eucalyptus-top {
+    width: 60px;
+    height: 45px;
+  }
+
+  .eucalyptus-bottom {
+    width: 60px;
+    height: 45px;
+  }
+
+  .info-box {
+    padding: 1rem;
+    min-height: 140px;
+  }
+
+  .info-icon {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .info-box h3 {
+    font-size: 1rem;
+  }
+
+  .info-box p {
+    font-size: 0.85rem;
+  }
+
+  .image-overlay {
+    min-width: 90%;
+    padding: 12px 20px;
+  }
+
+  .story-text {
+    font-size: 1.2rem;
   }
 }
 
