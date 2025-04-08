@@ -95,16 +95,16 @@ function App() {
                       <div className='info-boxes'>
                         <div className='info-box'>
                           <FaUserTie className='info-icon' />
-                          <h3>Kveldens Sjef</h3>
-                          <p>Trond "The Boss" Løschbrandt</p>
-                          <p>Ring hvis du tør: 123 45 678</p>
+                          <h3>Kveldens Festkommandør</h3>
+                          <p>Trond Løschbrandt</p>
+                          <p>Ring/send SMS for taletid: 93460480</p>
                         </div>
 
                         <div className='info-box important-info'>
                           <FaInfoCircle className='info-icon' />
                           <h3>Viktig info</h3>
                           <ul className='info-list'>
-                            <li>Husk å meld ifra om allergier - innen 31.mai.</li>
+                            <li>Husk å meld ifra om allergier - innen 30.april.</li>
                           </ul>
                         </div>
                       </div>
