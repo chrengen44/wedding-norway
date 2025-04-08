@@ -28,7 +28,7 @@ const timelineEvents = [
     date: "Kl 15:00",
     title: "Apritiff og småmat",
     description:
-      "Mens vi tar bilder, får dere nyte noe godt i glasset og litt mat i skylounge",
+      "Mens vi tar bilder, får dere nyte noe godt i glasset og litt mat i skyloungen.",
     image: food,
   },
   {

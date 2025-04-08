@@ -104,7 +104,7 @@ function App() {
                           <FaInfoCircle className='info-icon' />
                           <h3>Viktig info</h3>
                           <ul className='info-list'>
-                            <li>Husk å meld ifra om allergier - innen 30.april.</li>
+                            <li>Husk å meld ifra om allergier til Christian innen 30.april.</li>
                           </ul>
                         </div>
                       </div>
