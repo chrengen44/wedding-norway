@@ -577,16 +577,18 @@
   .info-boxes {
     flex-direction: column;
     gap: 1rem;
-    padding: 0 1rem;
-    margin-top: 2rem;
+    padding: 0;
+    margin: 2rem auto;
     width: 100%;
+    max-width: 100%;
+    align-items: center;
   }
 
   .info-box, 
   .info-box-link {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
     flex: none;
   }
 
