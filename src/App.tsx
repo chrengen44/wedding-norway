@@ -97,7 +97,8 @@ function App() {
                           <FaUserTie className='info-icon' />
                           <h3>Kveldens Festkommandør</h3>
                           <p>Trond Løschbrandt</p>
-                          <p>Ring/send SMS for taletid: 93460480</p>
+                          <p>Ring/send SMS/epost for taletid: 93460480</p>
+                          <p>Epost: Trond.Løschbrandt@strommes24.no</p>
                         </div>
 
                         <div className='info-box important-info'>
@@ -105,6 +106,8 @@ function App() {
                           <h3>Viktig info</h3>
                           <ul className='info-list'>
                             <li>Husk å meld ifra om allergier til Christian innen 30.april.</li>
+                            <li>Meld ifra til Christian så raskt som mulig om du vil bruke egen transport fra kirken til Tårnet.</li>
+                            <li>For taler, meld ifra til Kveldens Festkommandør Trond Løschbrandt innen 1.juni. Ta med info som navn, tilhørighet til brudeparet, bosted, yrke.</li>
                           </ul>
                         </div>
                       </div>
