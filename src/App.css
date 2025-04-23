@@ -519,16 +519,18 @@
   opacity: 0;
 }
 
-/* Responsive adjustments */
+/* Mobile styles */
 @media (max-width: 768px) {
   .split-layout {
     flex-direction: column;
     height: auto;
+    min-height: 100vh;
   }
 
   .image-section {
     height: 50vh;
     min-height: 300px;
+    flex: none;
   }
 
   .carousel-slide {
@@ -542,6 +544,12 @@
     min-height: 50vh;
     position: relative;
     overflow: hidden;
+    flex: none;
+  }
+
+  .wedding-info {
+    max-height: none;
+    padding: 1rem;
   }
 
   .wedding-info h1 {
@@ -555,22 +563,15 @@
   }
 
   .eucalyptus-top {
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 80px;
     height: 60px;
     opacity: 0.6;
   }
 
   .eucalyptus-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 80px;
     height: 60px;
     opacity: 0.6;
-    transform: rotate(180deg);
   }
 
   .info-boxes {
@@ -579,7 +580,6 @@
     padding: 0 1rem;
     margin-top: 2rem;
     width: 100%;
-    max-width: 100%;
   }
 
   .info-box, 
@@ -640,7 +640,7 @@
   }
 }
 
-/* Add styles for very small screens */
+/* Small mobile devices */
 @media (max-width: 480px) {
   .wedding-info h1 {
     font-size: 2rem;
