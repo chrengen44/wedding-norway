@@ -98,7 +98,7 @@ function App() {
                           <h3>Kveldens Festkommandør</h3>
                           <p>Trond Løschbrandt</p>
                           <p>Ring/send SMS/epost for taletid: 93460480</p>
-                          <p>Epost: Trond.Løschbrandt@strommes24.no</p>
+                          <p>Epost: Trond.Loschbrandt@strommes24.no</p>
                         </div>
 
                         <div className='info-box important-info'>
